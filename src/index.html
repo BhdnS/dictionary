@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="./images/favicon/dictionary-16.png" sizes="16x16" type="image/png">
+	<link rel="shortcut icon" href="./images/favicon/dictionary-32.png" sizes="32x32" type="image/png">
+	<link rel="shortcut icon" href="./images/favicon/dictionary-96.png" sizes="96x96" type="image/png">
+	<title>Dictionary</title>
+</head>
+<body>
+	<div class="wrapper white__background">
+		<img id="theme" class="theme sun" src="./images/theme/sun.svg" alt="Theme">
+		<div class="container">
+			<header class="header">
+				<h1 class="header__title title">Dictionary</h1>
+			</header>
+			<main class="main">
+				<div class="work">
+					<form method="get" class="form__work">
+						<div class="form__box">
+							<input 
+							class="form__input" 
+							type="text" 
+							name="word" 
+							id="input"
+							value=""
+							autocomplete="off"
+							placeholder="Enter a word..."
+							>
+							<button class="form__btn" id="submit" type="submit">Submit</button>
+						</div>
+					</form>
+				</div>
+				<div class="content" style="display: none;">
+					<div class="sound">
+						<p id="word" class="sound__word text"></p>
+						<img id="img" class="sound__img" src="./images/sound-black-50.png" alt="Sound">
+						<audio id="audio" src="./audio/notFound.mp3"></audio>
+					</div>
+					<div class="transcription">
+						<h2 class="transcription__title title">Transcription:</h2>
+						<p id="transcription" class="transcription__text text"></p>
+					</div>
+					<div class="speech">
+						<h2 class="speech__title title">Part of speech:</h2>
+						<div id="speech" class="speech__box text"></div>
+					</div>
+					<div class="definition">
+						<h2 class="definition__title title">Definition:</h2>
+						<div id="definition" class="definition__box text"></div>
+					</div>
+					<div class="synonyms">
+						<h2 class="synonyms__title title">Synonyms:</h2>
+						<div id="synonyms" class="synonyms__text text"></div>
+					</div>
+					<div class="antonyms">
+						<h2 class="antonyms__title title">Antonyms:</h2>
+						<div id="antonyms" class="antonyms__text text"></div>
+					</div>
+					<div class="wiki">
+						<a target="_blank" href="#" id="wiktionary" class="wiki__link title">Wiktionary</a>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+</body>
+</html>

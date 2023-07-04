@@ -1,0 +1,153 @@
+.wrapper {
+	min-width: 100%;
+	min-height: 100%;
+	padding: 20px 0px 0px 0px;
+	position: relative;
+}
+
+.title {
+	font-family: Abel;
+	font-size: 1.5rem;
+	color: rgb(45, 1, 1);
+}
+
+.text {
+	font-family: 'Merriweather', serif;
+	font-size: 2rem;
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.header {
+		&__title {
+			font-size: 3rem;
+			text-align: center;
+		}
+}
+
+.work {
+	display: flex;
+	justify-content: center;
+}
+
+.form {
+
+		&__box {
+			padding: 10px 0px 10px 0px;
+		}
+
+		&__input {
+			font-size: 2rem;
+			padding: 3px 7px 3px 7px;
+		}
+
+		&__btn {
+			font-size: 2rem;
+			padding: 3px 7px 4px 7px;
+		}
+
+		// &__btn:hover {
+		// 	background-color: rgb(183, 183, 183);
+		// 	transition-duration: 0.5s;
+		// }
+
+		&__btn:active {
+			background-color: rgb(125, 125, 125);
+			transition-duration: 0.5s;
+		}
+}
+.sound {
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+		&__img {
+			cursor: pointer;
+		}
+
+}
+.transcription {
+
+		&__title {
+			padding: 5px 0px 5px 0px;
+		}
+
+}
+.speech {
+
+	&__title {
+		padding: 5px 0px 5px 0px;
+		}
+
+		&__box {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		&__text {
+			padding: 0px 5px 0px 0px;
+		}
+}
+.definition {
+
+		&__title {
+			padding: 5px 0px 5px 0px;
+		}
+
+		&__element {
+			padding: 5px 0px 5px 0px;
+		}
+}
+.synonyms {
+		&__title {
+			padding: 5px 0px 5px 0px;
+		}
+
+		&__element {
+			padding: 5px 0px 5px 0px;
+		}
+
+}
+.antonyms {
+		&__title {
+			padding: 5px 0px 5px 0px;
+		}
+
+}
+.wiki {
+	display: flex;
+	justify-content: center;
+	padding: 0px 0px 10px 0px;
+		&__link {
+			font-size: 2rem;
+		}
+}
+
+.theme {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
+.white__background {
+	background: linear-gradient(90deg, #cfecd0, #a0cea7, #9ec0db);
+}
+
+.black__background {
+	background: linear-gradient(4deg, #1f067c, #322815);
+}
+
+.white {
+	color: white;
+}
+
+.yellow {
+	color: rgb(151, 108, 21);
+}
