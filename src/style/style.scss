@@ -49,11 +49,6 @@
 			padding: 3px 7px 4px 7px;
 		}
 
-		// &__btn:hover {
-		// 	background-color: rgb(183, 183, 183);
-		// 	transition-duration: 0.5s;
-		// }
-
 		&__btn:active {
 			background-color: rgb(125, 125, 125);
 			transition-duration: 0.5s;
@@ -67,6 +62,8 @@
 
 		&__img {
 			cursor: pointer;
+			width: 30px;
+			height: 30px;
 		}
 
 }
