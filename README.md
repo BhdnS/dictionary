@@ -1,3 +1,3 @@
-# dictionary
+# Dictionary
 
-link: https://bhdns.github.io/dictionary/dist/index.html
+[Dictionary](https://bhdns.github.io/dictionary/dist/index.html)
