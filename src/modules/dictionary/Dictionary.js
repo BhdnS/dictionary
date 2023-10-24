@@ -1,20 +1,20 @@
 import notFound from '../../audio/notFound.mp3';
 
 export default class Dictionary {
-  constructor(params) {
-    this.api = params.api;
-    this.btn = params.btn;
-    this.input = params.input;
-    this.wiki = params.wiki;
-    this.img = params.img;
-    this.audio = params.audio;
-    this.word = params.word;
-    this.transcription = params.transcription;
-    this.speech = params.speech;
-    this.definition = params.definition;
-    this.synonyms = params.synonyms;
-    this.antonyms = params.antonyms;
-    this.content = params.content;
+  constructor() {
+    this.api = 'https://api.dictionaryapi.dev/api/v2/entries/en/';
+    this.btn = document.querySelector('#submit');
+    this.input = document.querySelector('#input');
+    this.wiki = document.querySelector('#wiktionary');
+    this.img = document.querySelector('#img');
+    this.audio = document.querySelector('#audio');
+    this.word = document.querySelector('#word');
+    this.transcription = document.querySelector('#transcription');
+    this.speech = document.querySelector('#speech');
+    this.definition = document.querySelector('#definition');
+    this.synonyms = document.querySelector('#synonyms');
+    this.antonyms = document.querySelector('#antonyms');
+    this.content = document.querySelector('.content');
 
     this.url = '';
     this.linkWiki = '';
@@ -25,6 +25,36 @@ export default class Dictionary {
       phonetics: [],
       meanings: [],
     };
+  }
+
+  clickBtn() {
+    this.btn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      if (this.btn && this.input.value !== '') {
+        this.url = `${this.api}${this.input.value}`;
+        await this.#response();
+        this.#wikiResp();
+        this.#wordResp();
+        this.#transcriptionResp();
+        this.#speechResp();
+        this.#definitionResp();
+        this.#synonymsResp();
+        this.#antonymsResp();
+        this.content.style.display = 'block';
+      }
+    });
+  }
+
+  audioResp() {
+    this.img.addEventListener('click', () => {
+      if (this.data.phonetics.length > 0 && this.data.phonetics[0].audio) {
+        this.audio.src = this.data.phonetics[0].audio;
+        this.audio.play();
+      } else {
+        this.audio.src = notFound;
+        this.audio.play();
+      }
+    });
   }
 
   async #response() {
@@ -56,24 +86,6 @@ export default class Dictionary {
     }
   }
 
-  clickBtn() {
-    this.btn.addEventListener('click', async (e) => {
-      e.preventDefault();
-      if (this.btn && this.input.value !== '') {
-        this.url = `${this.api}${this.input.value}`;
-        await this.#response();
-        this.#wikiResp();
-        this.#wordResp();
-        this.#transcriptionResp();
-        this.#speechResp();
-        this.#definitionResp();
-        this.#synonymsResp();
-        this.#antonymsResp();
-        this.content.style.display = 'block';
-      }
-    });
-  }
-
   #wikiResp() {
     this.wiki.href = this.linkWiki;
   }
@@ -86,18 +98,6 @@ export default class Dictionary {
       this.newWord = wordData[0].toUpperCase() + wordData.slice(1);
       this.word.textContent = this.newWord;
     }
-  }
-
-  audioResp() {
-    this.img.addEventListener('click', () => {
-      if (this.data.phonetics.length > 0 && this.data.phonetics[0].audio) {
-        this.audio.src = this.data.phonetics[0].audio;
-        this.audio.play();
-      } else {
-        this.audio.src = notFound;
-        this.audio.play();
-      }
-    });
   }
 
   #transcriptionResp() {
